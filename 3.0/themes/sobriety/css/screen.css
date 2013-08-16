@@ -842,9 +842,8 @@ div#g-action-status {
 }
 
 
-#g-add-photos-canvas-sd {
+/*#g-add-photos-canvas-sd {
   height: 33px;
-  /*margin-right: 63px;*/
   position: relative;
 }
 
@@ -866,18 +865,59 @@ div#g-action-status {
   display: block;
   margin: auto;
   top: -20px;
-  /*top: 0;
-  left: 50%;
-  padding-right: 75px;*/
-  /*position: relative;display: none;*/
 }
 
 .uploadifyQueue {
   display: none;
 }
 
+*/
+
+#g-dialog ul.g-breadcrumbs {
+  display: none;
+}
+
+#g-dialog div.requires-flash {
+  text-align: center;
+}
+
+#g-dialog div#g-add-photos-canvas {
+  display: inline-block;
+  height: auto;
+  width: auto;
+  padding: 0px 5px;
+  border: 0;
+}
+
+#g-dialog button#g-add-photos-button {
+  position: static;
+  display: block;
+  width: auto;
+  margin: auto;
+}
+
+#g-dialog div#g-add-photos-canvas object {
+  left: 0;
+  width: 100% !important;
+  top: 0;
+  height: 100% !important;
+  margin: 0;
+  padding: 0;
+}
+
+
+#g-dialog div#g-uploadifyQueue {
+  display: none;
+}
+
+#g-dialog div#g-add-photos-status {
+  display: none;
+}
+
+
 #g-add-photos-progress {
   margin-top: 1em;
+  text-align: left;
 }
 
 #g-add-photos-progress li {
@@ -888,20 +928,20 @@ div#g-action-status {
   font-size: 1.2em;
 }
 
-#g-add-photos-progressbar-frame {
+#g-add-photos-progress-bar {
   width: 100%;
   padding: 0 !important;
   border: 1px solid #aaa;
 }
 
-#g-add-photos-progressbar {
+#g-add-photos-progress-bar span {
   display: block;
   height: 22px;
   width: 0%;
   background-image: url("../images/backgrounds/pbar-ani.gif");
   background-repeat: repeat-x;
 }
-#g-add-photos-progressbar.stop {
+#g-add-photos-progress-bar span.stop {
   background-image: url("../images/backgrounds/pbar-ani-stop.gif");
 }
 
