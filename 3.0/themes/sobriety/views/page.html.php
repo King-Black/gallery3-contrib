@@ -1,5 +1,4 @@
 <?php defined("SYSPATH") or die("No direct script access.") ?>
-<?php header("X-Frame-Options: SAMEORIGIN"); ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
           "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" <?= $theme->html_attributes() ?> xml:lang="en" lang="en">
@@ -35,25 +34,12 @@
     </script>
     <?= $theme->script("gallery.ajax.js") ?>
     <?= $theme->script("gallery.dialog.js") ?>
-    <?= $theme->script("_DISABLED_superfish/js/superfish.js") ?>
-    <?= $theme->script("_DISABLED_jquery.localscroll.js") ?>
-    <?= $theme->script("sobriety.ui.init.js") ?>
-
-    <? /* These are page specific but they get combined */ ?>
-    <? if ($theme->page_subtype == "photo"): ?>
-    <?= $theme->script("_DISABLED_jquery.scrollTo.js") ?>
     <?= $theme->script("gallery.show_full_size.js") ?>
-    <? elseif ($theme->page_subtype == "movie"): ?>
-    <?= $theme->script("flowplayer.js") ?>
-    <? endif ?>
 
     <?= $theme->head() ?>
 
     <? /* Theme specific CSS/JS goes last so that it can override module CSS/JS */ ?>
-    <?= $theme->script("ui.init.js") ?>
-    <?= $theme->css("DISABLED_yui/reset-fonts-grids.css") ?>
-    <?= $theme->css("DISABLED_superfish/css/superfish.css") ?>
-    <?= $theme->css("DISABLED_themeroller/ui.base.css") ?>
+    <?= $theme->script("sobriety.ui.init.js") ?>
     <?= $theme->css("screen.css") ?>
     <? if (locales::is_rtl()): ?>
     <?= $theme->css("screen-rtl.css") ?>
@@ -63,12 +49,9 @@
           media="screen,print,projection" />
     <![endif]-->
 
-    <!-- LOOKING FOR YOUR CSS? It's all been combined into the link below -->
     <?= $theme->get_combined("css") ?>
-    <?= new View("sobriety_styles.html") ?>
-
-    <!-- LOOKING FOR YOUR JAVASCRIPT? It's all been combined into the link below -->
     <?= $theme->get_combined("script") ?>
+    <?= new View("sobriety_styles.html") ?>
   </head>
 
   <body <?= $theme->body_attributes() ?>>
@@ -102,7 +85,7 @@
            <li class="<?= $breadcrumb->last ? "g-active" : "" ?>
                       <?= $breadcrumb->first ? "g-first" : "" ?>">
             <? if (!$breadcrumb->last): ?> <a href="<?= $breadcrumb->url ?>"><? endif ?>
-            <?= html::purify(text::limit_chars($breadcrumb->title, module::get_var("gallery", "visible_title_length"))) ?>
+            <?= html::clean(text::limit_chars($breadcrumb->title, module::get_var("gallery", "visible_title_length"))) ?>
             <? if (!$breadcrumb->last): ?></a><? endif ?>
            </li>
           <? endforeach ?>
@@ -119,7 +102,7 @@
           </div>
         </div>
         <div id="g-sidebar" class="yui-b">
-          <? if ($theme->page_subtype != "login"): ?>
+          <? if (!in_array($theme->page_subtype, array("login", "error"))): ?>
           <?= new View("sidebar.html") ?>
           <? endif ?>
         </div>

@@ -377,7 +377,7 @@ div#bd {
 }
 .g-item:hover > ul.g-context-menu > li:hover > ul > li {
     line-height: 16px;
-    padding: 0px 0 0px 20px;
+    padding: 0 0 0 2px;
 }
 .g-item:hover > ul.g-context-menu > li:hover > ul > li > a {
     color: #fff;
@@ -387,30 +387,30 @@ div#bd {
     padding: 4px 0;
 }
 
-.g-item:hover > ul.g-context-menu > li:hover > ul > li > a > span {
+.g-item:hover > ul.g-context-menu > li:hover > ul > li > a:before {
+    content: "";
+    float: left;
     height: 16px;
-    width: 16px;
-    display: block;
-    position: absolute;
-    left: 2px;
+    width: 18px;
     background-image: url("../images/icons/ui-icons_d8e7f3_256x240.png");
+    background-repeat: no-repeat;
 }
 .g-item:hover > ul.g-context-menu > li:hover > ul > li:hover > a {
     color: #f9bd01;
 }
-.g-item:hover > ul.g-context-menu > li:hover > ul > li:hover > a > span {
+.g-item:hover > ul.g-context-menu > li:hover > ul > li:hover > a:before {
     background-image: url("../images/icons/ui-icons_f9bd01_256x240.png");
 }
 
-span.ui-icon-pencil { background-position: -64px -112px; }
-span.ui-icon-folder-open { background-position: -16px -96px; }
-span.ui-icon-star { background-position: -224px -112px; }
-span.ui-icon-trash { background-position: -176px -96px; }
-span.ui-icon-rotate-ccw { background-position: -192px -64px; }
-span.ui-icon-rotate-cw { background-position: -208px -64px; }
-span.ui-icon-plus { background-position: -16px -128px; }
-span.ui-icon-note { background-position: -64px -96px; }
-span.ui-icon-key { background-position: -112px -128px; }
+a.ui-icon-pencil:before { background-position: -64px -112px; }
+a.ui-icon-folder-open:before { background-position: -16px -96px; }
+a.ui-icon-star:before { background-position: -224px -112px; }
+a.ui-icon-trash:before { background-position: -176px -96px; }
+a.ui-icon-rotate-ccw:before { background-position: -192px -64px; }
+a.ui-icon-rotate-cw:before { background-position: -208px -64px; }
+a.ui-icon-plus:before { background-position: -16px -128px; }
+a.ui-icon-note:before { background-position: -64px -96px; }
+a.ui-icon-key:before { background-position: -112px -128px; }
 
 
 
