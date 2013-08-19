@@ -17,9 +17,4 @@ $(document).ready(function() {
         $(this).find(".g-dialog-link").gallery_dialog();
         $(this).find(".g-ajax-link").gallery_ajax();
     }
-
-    //
-    $.ui.gallery_dialog.defaults.position = "top";
-    //$.ui.gallery_dialog.defaults.show = "slide";
-    $.ui.dialog.defaults.draggable = false;
 });
